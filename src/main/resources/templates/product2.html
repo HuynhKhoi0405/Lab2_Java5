@@ -6,22 +6,16 @@
 </head>
 <body>
 <h2>Nhập sản phẩm</h2>
-<form action="/product2/save" method="post">
-  Name: <input type="text" name="name"><br>
-  Price: <input type="number" name="price"><br>
+<form action="/product2/save" method="post" th:object="${product}">
+  Name: <input type="text" th:field="*{name}"><br>
+  Price: <input type="number" th:field="*{price}"><br>
   <button type="submit">Save</button>
 </form>
 
-<h3>Product mặc định:</h3>
-<ul>
-  <li th:text="${p1.name}"></li>
-  <li th:text="${p1.price}"></li>
-</ul>
-
 <h3>Product vừa nhập:</h3>
-<ul>
-  <li th:text="${p2.name}"></li>
-  <li th:text="${p2.price}"></li>
+<ul th:if="${lastProduct != null}">
+  <li th:text="${lastProduct.name}"></li>
+  <li th:text="${lastProduct.price}"></li>
 </ul>
 
 <h3>Danh sách sản phẩm:</h3>

@@ -11,7 +11,7 @@ public class ProductController {
 
     @GetMapping("/form")
     public String form(Model model) {
-        model.addAttribute("product", new Product()); // tạo object trống
+        model.addAttribute("product", new Product());
         return "product";
     }
 

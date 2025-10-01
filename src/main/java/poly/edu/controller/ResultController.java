@@ -10,18 +10,18 @@ public class ResultController {
 
     @RequestMapping("/a")
     public String a(Model model) {
-        model.addAttribute("message", "Trang A");
+        model.addAttribute("message", "A");
         return "bai5";
     }
     @RequestMapping("/b")
     public String b(Model model) {
-        model.addAttribute("message", "I come from b");
+        model.addAttribute("message", " b");
         return "forward:/a";
     }
 
     @RequestMapping("/c")
     public String c(RedirectAttributes params) {
-        params.addAttribute("message", "I come from c");
+        params.addAttribute("message", "c");
         return "redirect:/a";
     }
 
